@@ -10,45 +10,61 @@
 </head>
 
 <body>
-    <div class="container">
-        <header class="page-header">
-            <h1>Tip Calculator</h1>
-        </header>
-        <section class="container">
-            <span id="dollar-box">$</span>
-            <input type="number"
-                   id="user-bill"
-                   placeholder="please enter total bill">
-        </section>
-        <table class="container"
-               class="tip-chooser">
-            <tr>
-                <td class="tip-square">10%</td>
-                <td class="tip-square">15%</td>
-                <td class="tip-square">20%</td>
-            </tr>
-        </table>
-        <div>
-            <td id="tip-choice">You are tipping y%</td>
-        </div>
 
+    <header class="page-header">
+        <h1>Tip Calculator</h1>
+    </header>
+    <section class="container">
+        <span id="dollar-box">$</span>
+        <input type="number"
+               id="user-bill"
+               placeholder="please enter total bill"
+               value="" />
+    </section>
+    <table class="container"
+           class="tip-chooser">
+        <tr>
+            <td class="tip-square">10%</td>
+            <td class="tip-square">15%</td>
+            <td class="tip-square">20%</td>
+        </tr>
+    </table>
+    <div>
+
+        <td>
+            <label for="tip-choice">You are tipping </label>
+            <span id="tip-choice"></span>
+        </td>
     </div>
 
     <table class="container">
         <tr>
             <td>
                 <label for="display-bill">Bill Amount: $</label>
-                <output id="display-bill">
+                <span id="display-bill"
+                      value=""></span>
             </td>
         </tr>
         <tr>
-            <td>Tip Percentage: y%</td>
+            <td>
+                <label for="display-tip-prcnt">Tip Percentage: </label>
+                <span id="display-tip-prcnt"
+                      value=""></span>
+            </td>
         </tr>
         <tr>
-            <td>Amount of tip: $z =x*(y/100)</td>
+            <td> <label for="display-tip-amt">Amount of tip: $</label>
+                <span id="display-tip-amt"
+                      value=""></span>
+            </td>
         </tr>
         <tr>
-            <td id="total-paid">Total to be Paid: $q = x+ z</td>
+            <td>
+                <label id="label-for-total-bill"
+                       for="display-total-bill">Total to be Paid: $</label>
+                <span id="display-total-bill"
+                      value=""></span>
+            </td>
         </tr>
     </table>
 </body>

@@ -46,7 +46,7 @@ table {
     
   }
 
-#total-paid{
+#display-total-bill, #label-for-total-bill {
     font-style: italic;
 }
 
