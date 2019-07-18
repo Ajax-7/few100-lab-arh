@@ -4,17 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Webpack Showcase</title>
-    
+    <link rel="stylesheet"
+          type="text/css"
+          href="./styles.css">
 </head>
 
 <body>
     <div class="container">
         <header class="page-header">
-            <h1>Web Dev</h1>
-            <h2>Super Awesome</h2>
+            <h1>Tip Calculator</h1>
         </header>
+        <section class="container">
+            <span id="dollar-box">$</span>
+            <input type="number"
+                   id="user-bill"
+                   placeholder="please enter total bill">
+        </section>
+        <table class="container"
+               class="tip-chooser">
+            <tr>
+                <td class="tip-square">10%</td>
+                <td class="tip-square">15%</td>
+                <td class="tip-square">20%</td>
+            </tr>
+        </table>
+        <div>
+            <td id="tip-choice">You are tipping y%</td>
+        </div>
 
     </div>
+
+    <table class="container">
+        <tr>
+            <td>
+                <label for="display-bill">Bill Amount: $</label>
+                <output id="display-bill">
+            </td>
+        </tr>
+        <tr>
+            <td>Tip Percentage: y%</td>
+        </tr>
+        <tr>
+            <td>Amount of tip: $z =x*(y/100)</td>
+        </tr>
+        <tr>
+            <td id="total-paid">Total to be Paid: $q = x+ z</td>
+        </tr>
+    </table>
 </body>
 
 </html>

@@ -1,3 +1,59 @@
 h1 {
-    color:blueviolet
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    color:black;
 }
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+   margin-top: 2%;
+   margin-bottom: 2%;
+  }
+ 
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    
+  }
+
+  .tip-square{
+    background-color: darkgray;
+    cursor: pointer;
+  }
+  .tip-square.selected{
+    background-color: gray;
+    cursor: default;
+  }
+
+  .tip-chooser table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 20%;
+}
+
+  td, th #tip-chooser {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    
+  }
+  td #tip-choice {
+    
+    text-align: left;
+    padding: 8px;
+    
+  }
+
+#total-paid{
+    font-style: italic;
+}
+
+#dollar-box{
+    width: 100%; 
+    text-align: center;
+    background-color: lightgray;
+}
+
+
