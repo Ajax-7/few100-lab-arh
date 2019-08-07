@@ -5,10 +5,10 @@ export function getDefaultInitTypeValues() {
 export function getInitUserTipSelect(): number {
     let initTipSelect: number = 1;
     if (typeof (Storage) !== "undefined") {
-        if (localStorage.getItem('initTipPrcnt') === null) {
-            localStorage.setItem('initTipPrcnt', initTipSelect.toString());
+        if (sessionStorage.getItem('initTipPrcnt') === null) {
+            sessionStorage.setItem('initTipPrcnt', initTipSelect.toString());
         } else {
-            initTipSelect = parseInt(localStorage.getItem("initTipPrcnt"));
+            initTipSelect = parseInt(sessionStorage.getItem("initTipPrcnt"));
         }
     }
     return initTipSelect;
@@ -16,7 +16,7 @@ export function getInitUserTipSelect(): number {
 
 export function setInitUserTipSelect(index: number): void {
     if (typeof (Storage) !== "undefined") {
-        localStorage.setItem('initTipPrcnt', index.toString());
+        sessionStorage.setItem('initTipPrcnt', index.toString());
     }
 }
 

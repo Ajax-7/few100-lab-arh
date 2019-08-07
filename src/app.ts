@@ -72,12 +72,8 @@ function handleClick(evt) {
         }
     });
     that.classList.add('selected');
-    console.log(`handle` + localStorage.getItem('initTipPrcnt'));
     setInitUserTipSelect(tipIndex);
     userTipPrcnt = tipValues[tipIndex];
-    console.log(userTipPrcnt);
-    console.log(tipIndex);
-    console.log(`handle` + localStorage.getItem('initTipPrcnt'));
     that.removeEventListener('click', handleClick);
     updateValues(userTipPrcnt);
 
