@@ -11,6 +11,10 @@ export function percentToDecimal(a: number): number {
     return divide(a, 100);
 }
 
+export function multiply(a: number, b: number): number {
+    return a * b;
+}
+
 
 
 

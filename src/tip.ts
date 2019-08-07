@@ -31,8 +31,8 @@ export function getUserTipAmt(tipPrcnt: number, bill: number): number {
     return percentToDecimal(tipPrcnt) * bill;
 }
 
-export function getUserTotalBill(a: number, b: number): number {
-    return add(a, b);
+export function getUserTotalBill(userBill: number, userTipAmt: number): number {
+    return add(userBill, userTipAmt);
 }
 
 export function displayUserBill(userBill: number): void {
