@@ -1,8 +1,26 @@
 import { percentToDecimal, add } from "./utils";
 
 export function getUserBill(): number {
-    let userBill = parseInt((<HTMLInputElement>document.getElementById("user-bill")).value);
+    let billElement = <HTMLInputElement>document.getElementById("user-bill");
+    let userBill = parseInt(billElement.value);
     return userBill;
+}
+
+function negativeUserBill(): boolean {
+    return (getUserBill() < 0) ? true : false;
+    // return ((getUserBill() < 0) || (getUserBill().)) ? true : false;
+}
+
+function handleNegUserBill(): void {
+    let billElement = <HTMLInputElement>document.getElementById("user-bill");
+    let warnElement = <HTMLInputElement>document.getElementById("bill-warning");
+    if (negativeUserBill()) {
+        billElement.style.borderColor = '#FF0000';
+        warnElement.innerHTML = "Please enter a positive number";
+    } else {
+        billElement.style.borderColor = '';
+        warnElement.innerHTML = "";
+    }
 }
 
 // export function getUserTipPrcnt(): void {
@@ -18,9 +36,15 @@ export function getUserTotalBill(a: number, b: number): number {
 }
 
 export function displayUserBill(userBill: number): void {
-    let currBill: string;
-    (isNaN(userBill)) ? (currBill = "0") : currBill = userBill.toString();
-    document.getElementById("display-bill").innerHTML = currBill;
+    handleNegUserBill();
+    let displayElement = document.getElementById("display-bill");
+    if (negativeUserBill()) {
+        displayElement.innerHTML = '';
+    } else {
+        let currBill: string;
+        (isNaN(userBill)) ? (currBill = "0") : currBill = userBill.toString();
+        displayElement.innerHTML = currBill;
+    }
 }
 
 
@@ -32,13 +56,24 @@ export function displayUserTipPrcnt(userTip: number): void {
 }
 
 export function displayUserTipAmt(userTip: number): void {
-    let currTipAmt: string;
-    (isNaN(userTip)) ? (currTipAmt = "0") : currTipAmt = userTip.toString();
-    document.getElementById("display-tip-amt").innerHTML = currTipAmt;
+    let displayElement = document.getElementById("display-tip-amt");
+    if (negativeUserBill()) {
+        displayElement.innerHTML = '';
+    } else {
+        let currTipAmt: string;
+        (isNaN(userTip)) ? (currTipAmt = "0") : currTipAmt = userTip.toString();
+        displayElement.innerHTML = currTipAmt;
+    }
+
 }
 
 export function displayUserTotalBill(userTotalBill: number): void {
-    let currTotalBill: string;
-    (isNaN(userTotalBill)) ? (currTotalBill = "0") : currTotalBill = userTotalBill.toString();
-    document.getElementById("display-total-bill").innerHTML = currTotalBill;
+    let displayElement = document.getElementById("display-total-bill");
+    if (negativeUserBill()) {
+        displayElement.innerHTML = '';
+    } else {
+        let currTotalBill: string;
+        (isNaN(userTotalBill)) ? (currTotalBill = "0") : currTotalBill = userTotalBill.toString();
+        displayElement.innerHTML = currTotalBill;
+    }
 }

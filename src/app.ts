@@ -41,18 +41,13 @@ function updateValues(_userTipPrcnt: number) {
     let userTotalBill: number;
 
     userBill = getUserBill();
-    console.log("userBill is " + userBill);
     displayUserBill(userBill);
-
-    console.log("userTip is" + userTipPrcnt);
     displayUserTipPrcnt(userTipPrcnt);
 
     userTipAmt = getUserTipAmt(userTipPrcnt, userBill);
-    console.log("userTipAmt is" + userTipAmt);
     displayUserTipAmt(userTipAmt);
 
     userTotalBill = getUserTotalBill(userBill, userTipAmt);
-    console.log("userTotalBill is" + userTotalBill);
     displayUserTotalBill(userTotalBill);
 
 }
