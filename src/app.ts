@@ -1,9 +1,10 @@
 import './styles.css';
 import { add, divide, percentToDecimal } from './utils';
 import { getUserBill, getUserTipAmt, getUserTotalBill, displayUserBill, displayUserTipAmt, displayUserTotalBill, displayUserTipPrcnt } from './tip';
+import { getDefaultInitTypeValues, getInitUserTipSelect, setInitUserTipSelect } from './init';
 
 let tipOptions: NodeList;
-const tipValues: number[] = [10, 15, 20];
+const tipValues: number[] = getDefaultInitTypeValues();
 let userTipPrcnt: number;
 
 export function runApp() {
@@ -17,7 +18,7 @@ export function runApp() {
         let tipValue = tipValues[initPrcnt];
 
         that.innerHTML = tipValue.toString() + '%';
-        if (index === 1) {
+        if (index === getInitUserTipSelect()) {
             that.classList.add('selected');
             that.removeEventListener('click', handleClick);
             userTipPrcnt = tipValue;
@@ -71,7 +72,12 @@ function handleClick(evt) {
         }
     });
     that.classList.add('selected');
+    console.log(`handle` + localStorage.getItem('initTipPrcnt'));
+    setInitUserTipSelect(tipIndex);
     userTipPrcnt = tipValues[tipIndex];
+    console.log(userTipPrcnt);
+    console.log(tipIndex);
+    console.log(`handle` + localStorage.getItem('initTipPrcnt'));
     that.removeEventListener('click', handleClick);
     updateValues(userTipPrcnt);
 
