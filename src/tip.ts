@@ -6,26 +6,21 @@ export function getUserBill(): number {
     return userBill;
 }
 
-function negativeUserBill(): boolean {
-    return (getUserBill() < 0) ? true : false;
-    // return ((getUserBill() < 0) || (getUserBill().)) ? true : false;
-}
-
-function handleNegUserBill(): void {
+export function handleNegUserBill(): void {
     let billElement = <HTMLInputElement>document.getElementById("user-bill");
     let warnElement = <HTMLInputElement>document.getElementById("bill-warning");
     if (negativeUserBill()) {
         billElement.style.borderColor = '#FF0000';
-        warnElement.innerHTML = "Please enter a positive number";
+        warnElement.innerHTML = 'Please enter a positive number';
     } else {
         billElement.style.borderColor = '';
-        warnElement.innerHTML = "";
+        warnElement.innerHTML = '';
     }
 }
 
-// export function getUserTipPrcnt(): void {
-//     document.querySelector("tip-square.selected");
-// }
+export function negativeUserBill(): boolean {
+    return (getUserBill() < 0) ? true : false;
+}
 
 export function getUserTipAmt(tipPrcnt: number, bill: number): number {
     return percentToDecimal(tipPrcnt) * bill;

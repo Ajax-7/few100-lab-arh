@@ -21,16 +21,18 @@
                id="user-bill"
                placeholder="What is your total bill?"
                value="" />
+
+        <label for="number-payers"># of Payers</label>
+        <input type="number"
+               id="number-payers"
+               name="number-payers"
+               placeholder="How many payers?"></input>
+
+    </section>
+    <section>
         <span class="warning"
               id="bill-warning"
               value=""></span>
-        <label for="number-payers"></label>
-        <span id="number-payers">
-            <input type="number"
-                   name="number-payers"
-                   placeholder="How many payers?"></input>
-
-        </span>
         <span class="warning"
               id="bill-warning"
               value=""></span>
@@ -80,7 +82,7 @@
                       value=""></span>
             </td>
         </tr>
-        <tr>
+        <tr id="bill-per-person-section">
             <td>
                 <label id="label-bill-per-person"
                        for="display-bill-per-person">Total Per Person: $</label>

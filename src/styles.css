@@ -46,7 +46,7 @@ table {
     
   }
 
-#display-total-bill, #label-for-total-bill, #label-bill-per-person {
+#display-total-bill, #label-for-total-bill, #display-bill-per-person, #label-bill-per-person {
     font-style: italic;
 }
 

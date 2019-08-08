@@ -2,6 +2,7 @@ import './styles.css';
 import { add, divide, percentToDecimal } from './utils';
 import { getUserBill, getUserTipAmt, getUserTotalBill, displayUserBill, displayUserTipAmt, displayUserTotalBill, displayUserTipPrcnt } from './tip';
 import { getDefaultInitTypeValues, getInitUserTipSelect, setInitUserTipSelect } from './init';
+import { displayTotalBillPerPerson, getNumberPayers, toggleBillPerPersonSectionOn } from './split-bill';
 
 let tipOptions: NodeList;
 const tipValues: number[] = getDefaultInitTypeValues();
@@ -9,7 +10,16 @@ let userTipPrcnt: number;
 
 export function runApp() {
 
+    toggleBillPerPersonSectionOn(getNumberPayers());
+    setupTipSelection();
+    document.getElementById("user-bill")
+        .addEventListener("input", () => updateValues(userTipPrcnt));
+    document.getElementById('number-payers')
+        .addEventListener('input', () => updateValues(userTipPrcnt));
 
+
+}
+function setupTipSelection() {
     tipOptions = document.querySelectorAll('.tip-square')
     let initPrcnt: number = 0;
     tipOptions.forEach((tipOption, index) => {
@@ -27,11 +37,6 @@ export function runApp() {
         }
         initPrcnt += 1;
     })
-    document.getElementById("user-bill")
-        .addEventListener("input", () => updateValues(userTipPrcnt));
-
-
-
 }
 
 function updateValues(_userTipPrcnt: number) {
@@ -50,6 +55,7 @@ function updateValues(_userTipPrcnt: number) {
 
     userTotalBill = getUserTotalBill(userBill, userTipAmt);
     displayUserTotalBill(userTotalBill);
+    displayTotalBillPerPerson(userTotalBill);
 
 }
 
